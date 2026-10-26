@@ -8,6 +8,8 @@ find_program(NODE_EXECUTABLE NAMES node nodejs)
 if(NODE_EXECUTABLE)
   add_test(NAME test_nativeshell
     COMMAND ${NODE_EXECUTABLE} --test ${CMAKE_CURRENT_SOURCE_DIR}/test_nativeshell.mjs)
+  add_test(NAME test_emby_mpv
+    COMMAND ${NODE_EXECUTABLE} --test ${CMAKE_CURRENT_SOURCE_DIR}/test_emby_mpv.mjs)
 endif()
 
 set(TEST_INCLUDE_DIRS
