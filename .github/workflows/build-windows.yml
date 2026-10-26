@@ -7,11 +7,10 @@ env:
   QT_VERSION: "6.9.3"
 
 on:
-  workflow_call:
   workflow_dispatch:
-  push:
-    branches:
-      - master
+
+permissions:
+  contents: read
 
 jobs:
   build:
