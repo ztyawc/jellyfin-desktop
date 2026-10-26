@@ -38,6 +38,8 @@ jobs:
     - uses: actions/checkout@v7
       with:
         submodules: recursive
+    - name: Test native shell JavaScript
+      run: node --test tests/test_nativeshell.mjs tests/test_emby_mpv.mjs
     - name: Install Qt 6
       uses: jurplel/install-qt-action@v4
       with:

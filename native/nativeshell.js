@@ -1,3 +1,5 @@
+// Keep native shell internals out of the web client's global scope.
+(function() {
 const features = [
     "filedownload",
     "displaylanguage",
@@ -592,3 +594,4 @@ window.jmpInfo.settingsUpdate.push(function(section) {
         }
     }
 });
+})();
