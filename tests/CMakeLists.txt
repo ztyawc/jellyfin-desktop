@@ -4,6 +4,12 @@ set(CMAKE_AUTOMOC ON)
 
 find_package(Qt6 ${REQUIRED_QT_VERSION} REQUIRED COMPONENTS Test)
 
+find_program(NODE_EXECUTABLE NAMES node nodejs)
+if(NODE_EXECUTABLE)
+  add_test(NAME test_nativeshell
+    COMMAND ${NODE_EXECUTABLE} --test ${CMAKE_CURRENT_SOURCE_DIR}/test_nativeshell.mjs)
+endif()
+
 set(TEST_INCLUDE_DIRS
   ${CMAKE_SOURCE_DIR}/src
   ${CMAKE_SOURCE_DIR}/src/core
